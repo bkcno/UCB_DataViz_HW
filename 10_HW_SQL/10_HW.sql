@@ -74,7 +74,6 @@ UPDATE actor
 SET first_name ="GROUCHO" 
 WHERE actor_id = 172;
     
--- (To verify the result of query 4c/4d)
 -- SELECT actor_id, first_name, last_name
 -- FROM actor
 -- WHERE last_name = 'Williams';
@@ -109,15 +108,6 @@ SELECT title,
 	) AS count
     FROM film;
     
--- (To verify #6c). 
--- SELECT COUNT(actor_id)
--- FROM film_actor
--- WHERE film_id IN
--- (
--- 	SELECT film_id 
---     FROM film
---     WHERE title = 'agent truman'
--- );
 
 -- 6d.
 SELECT COUNT(inventory_id)
