@@ -1,0 +1,1 @@
+CREATE DATABASE Hawaii_DB
