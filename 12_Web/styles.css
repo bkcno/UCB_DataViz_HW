@@ -1,0 +1,69 @@
+/* styles for index page */
+
+body {
+  background-color: lightgray
+}
+
+h1 {
+  padding: 20px 0;
+  margin: 50px;
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+  color: seagreen;
+}
+
+.navbar {
+  padding: 10px;
+  background:white;
+}
+
+.navbar li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 20px;
+  cursor: pointer;
+  background-color: wheat;
+}
+/* ul {
+    list-style-type: none;
+    margin: 0;
+    padding-left: 50px;
+    overflow: hidden;
+    background-color: white;
+}
+
+li {
+    float: left;
+}
+
+
+li a {
+    display: block;
+    color: black
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+/* } */
+
+li a:hover:not(.active) {
+    background-color: black } 
+
+.active {
+    background-color: seagreen;
+}
+
+
+.header h1 {
+  padding: 60px;
+  margin: 0;
+  color: #000;
+  text-align: center;
+}
+
+
+.post {
+  margin-top: 50px;
+  margin-right: 100px;
+  margin-left: 100px;
+}
