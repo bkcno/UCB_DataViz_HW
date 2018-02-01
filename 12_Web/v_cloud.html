@@ -16,7 +16,6 @@
     <ul>
       <li id="landing"><a class="active" href="index.html"><span class="glyphicon glyphicon-home"></span>Lattitude</a></li>
       <div class='pull-right'> 
-        
           <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Plots</a>
               <div class="dropdown-menu">
@@ -25,30 +24,23 @@
                 <a class="dropdown-item" href="v_cloud.html">Cloudiness</a>
                 <a class="dropdown-item" href="v_winds.html">Wind Speed</a>
               </div>
-            </li>
-<!-- 
-        <li><a href="plots.html">Plots</a></li> -->
+          </li>
         <li><a href="comps.html">Comparison</a></li>
         <li><a href="data.html">Data</a></li>
       </div>   
     </ul>
-    <div class="container">  
+    <div class="container"> 
     <div class="row">
         
         <div class="col-md-8">
           <div class="box1">
-            <h1>Summary: Latitude vs. X</h1>
+            <h1>Cloudiness</h1>
             <hr>
             <section id="main_info">
                 <section id="figure">
-                  <img id="out_temp" src="output_temp.png" alt="Temperature">
-                </section>
-                <p>The purpose of this project is to analyze how weather changes as one get closer to the equator.
-                  To accomplish this analysis, we first pulled data from OpenWeatherMap API to assemble a dataset of over 500 cities.</p>
-                  <br>
-                <p>After assembling the dataset, we used Matplotlib to plot various aspects of the weather vs latitude. Factors included: 
-                  temperature, cloudliness, wind speed and humidity. On this site, you can view the source data and visualizations created 
-                  as part of the analysis, as well as explanations and descriptions of any trends and correlations observed.</p>
+                  <img id="out_temp" src="output_clou.png" alt="Humidity" style="width:450px;height:360px;">
+                </section><br>
+                <p>For cloudiness, the data displays a scattered pattern. No significant trend observed in comparing among cities in different locations.</p>
             </section>
           </div>
         </div>
@@ -57,15 +49,15 @@
           <div class="box2">
           <h2>Visualizations</h2>
           <hr>
-          <div class="output">
-            <img src="output_temp.png" alt="Temperature" style="width:150px;height:150px;margin-right:10px;margin-bottom:5px;">
-            <img src="output_humi.png" alt="Humidity" style="width:150px;height:150px;margin-right:10px;margin-bottom:5px;">
-            <img src="output_clou.png" alt="Cloudiness" style="width:150px;height:150px;margin-right:10px;margin-bottom:5px;">
-            <img src="output_wind.png" alt="WindSpeed" style="width:150px;height:150px;margin-right:10px;margin-bottom:5px;"> 
+            <dv class="output">
+              <img src="output_temp.png" alt="Temperature" style="width:150px;height:150px;margin-right:10px;margin-bottom:5px;">
+              <img src="output_humi.png" alt="Humidity" style="width:150px;height:150px;margin-right:10px;margin-bottom:5px;">
+              <img src="output_clou.png" alt="Cloudiness" style="width:150px;height:150px;margin-right:10px;margin-bottom:5px;">
+              <img src="output_wind.png" alt="WindSpeed" style="width:150px;height:150px;margin-right:10px;margin-bottom:5px;"> 
 
+            </dv>
           </div>
         </div>
-    </div>
     </div>  
    
 

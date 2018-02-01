@@ -1,2 +1,2 @@
-# UCB_DataViz_HW
-Homework for Data Analysis
+# UCB_DataViz_Science
+Projects, homework, and what-nots. 

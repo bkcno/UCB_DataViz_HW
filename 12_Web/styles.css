@@ -27,12 +27,14 @@ li a {
 }
 
 li a:hover:not(.active) {
+  z-index: 2px;
   background-color: lightgrey;
   color: black;
   text-decoration: none;
 }
 
 #landing {color: white; font-size: 2em; font-weight: bold;}
+.pull_right {z-index: 2;}
 
 .active {
   color: white;
