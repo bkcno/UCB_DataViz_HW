@@ -14,11 +14,12 @@
 <body>
   <div class="container-fluid">
     <ul>
-      <li id="landing"><a class="active" href="#home">Lattitude</a></li>
+      <li id="landing"><a class="active" href="index.html"><span class="glyphicon glyphicon-home"></span>Lattitude</a></li>
+      
       <div class='pull-right'> 
         <li><a href="#">Plots</a></li>
-        <li><a href="#">Comparison</a></li>
-        <li><a href="#">Data</a></li>
+        <li><a href="comps.html">Comparison</a></li>
+        <li><a href="data.html">Data</a></li>
       </div>   
     </ul>
 
@@ -28,13 +29,29 @@
           <div class="box3">
           <h1>Comparison: Latitude vs. X</h1>
           <hr>
-            <dv class="output1">
-              <img src="output_temp.png" alt="Temperature" style="width:400px;height:250px;margin-right:40px;margin-bottom:10px;">
-              <img src="output_humi.png" alt="Humidity" style="width:400px;height:250px;margin-right:10px;margin-bottom:5px;">
-              <img src="output_clou.png" alt="Cloudiness" style="width:400px;height:250px;margin-right:10px;margin-bottom:5px;">
-              <img src="output_wind.png" alt="WindSpeed" style="width:400px;height:250px;margin-right:10px;margin-bottom:5px;"> 
+          <p1>Click any plot to view an in-depth analysis.</p1>
+          <br>
+            <div class="member">
+              <a href="temp.html">
+              <img src="output_temp.png" alt="Temperature" style="width:400px;height:250px;margin: 20px 40px;">
+              <div class="name">vs. Max Temperature</div></a>
+            </div>
+            <div class="member">
+                <a href="humid.html">
+              <img src="output_humi.png" alt="Humidity" style="width:400px;height:250px;margin: 20px 40px;">
+              <div class="name">vs. Humidity</div></a>
+            </div>
+            <div class="member">
+              <a href="cloud.html">
+              <img src="output_clou.png" alt="Cloudiness" style="width:400px;height:250px;margin: 20px 40px;">
+              <div class="name">vs. Cloudiness</div></a>
+            </div>
+            <div class="member">
+              <a href="winds.html">
+              <img src="output_wind.png" alt="WindSpeed" style="width:400px;height:250px;margin: 20px 40px;"> 
+              <div class="name">vs. Wind Speed</div></a>
+            </div>  
 
-            </dv>
           </div>
         </div>
     </div>  
