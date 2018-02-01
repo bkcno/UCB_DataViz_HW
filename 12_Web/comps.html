@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Web Visualization Dashboard</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+
+<body>
+  <div class="container-fluid">
+    <ul>
+      <li id="landing"><a class="active" href="#home">Lattitude</a></li>
+      <div class='pull-right'> 
+        <li><a href="#">Plots</a></li>
+        <li><a href="#">Comparison</a></li>
+        <li><a href="#">Data</a></li>
+      </div>   
+    </ul>
+
+    <div class="container">
+        
+        <div class="col-md-12">
+          <div class="box3">
+          <h1>Comparison: Latitude vs. X</h1>
+          <hr>
+            <dv class="output1">
+              <img src="output_temp.png" alt="Temperature" style="width:400px;height:250px;margin-right:40px;margin-bottom:10px;">
+              <img src="output_humi.png" alt="Humidity" style="width:400px;height:250px;margin-right:10px;margin-bottom:5px;">
+              <img src="output_clou.png" alt="Cloudiness" style="width:400px;height:250px;margin-right:10px;margin-bottom:5px;">
+              <img src="output_wind.png" alt="WindSpeed" style="width:400px;height:250px;margin-right:10px;margin-bottom:5px;"> 
+
+            </dv>
+          </div>
+        </div>
+    </div>  
+   
+
+  </div>
+</body>
+</html>

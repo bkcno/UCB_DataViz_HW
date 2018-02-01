@@ -1,69 +1,120 @@
 /* styles for index page */
 
 body {
+  font-family: Georgia, 'Times New Roman', Times, serif;
   background-color: lightgray
 }
 
-h1 {
-  padding: 20px 0;
-  margin: 50px;
-  margin-bottom: 20px;
-  font-size: 28px;
-  font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
-  color: seagreen;
-}
-
-.navbar {
-  padding: 10px;
-  background:white;
-}
-
-.navbar li {
+ul {
   list-style-type: none;
-  display: inline-block;
-  padding: 20px;
-  cursor: pointer;
-  background-color: wheat;
-}
-/* ul {
-    list-style-type: none;
-    margin: 0;
-    padding-left: 50px;
-    overflow: hidden;
-    background-color: white;
+  margin: 0;
+  padding-left: 75px;
+  overflow: hidden;
+  background-color: white;
 }
 
 li {
-    float: left;
+  cursor: pointer;
+  float: left;
 }
-
 
 li a {
-    display: block;
-    color: black
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-/* } */
+  display: block;
+  color: darkgray;
+  text-align: center;
+  padding: 15px;
+  text-decoration: none;
+}
 
 li a:hover:not(.active) {
-    background-color: black } 
+  background-color: lightgrey;
+  color: black;
+  text-decoration: none;
+}
+
+#landing {color: white; font-size: 2em; font-weight: bold;}
 
 .active {
-    background-color: seagreen;
+  color: white;
+  background-color: turquoise;
+  text-decoration: none;
 }
 
-
-.header h1 {
-  padding: 60px;
-  margin: 0;
-  color: #000;
-  text-align: center;
+.box1 {
+  height: 600px;
+  margin-top: 40px;
+  margin-left: 40px;
+  padding: 20px;
+  color: darkslategray;
+  background: white;
 }
 
-
-.post {
-  margin-top: 50px;
-  margin-right: 100px;
-  margin-left: 100px;
+.box2 {
+  height: 560px;
+  margin-top: 40px; 
+  margin-left: 10px;
+  padding: 20px;
+  color: darkslategray;
+  background: white;
 }
+
+.box3 {
+  height: 720px;
+  margin-top: 40px;
+  margin-left: 30px;
+  margin-right: 20px;
+  padding: 20px;
+  color: darkslategray;
+  background: white;
+}
+
+hr { 
+  display: block;
+  margin-top: 2em;
+  margin-bottom: 4em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1.5px;
+} 
+
+h1 {font-size: 2.5em; font-weight: bold; color: turquoise; padding-left: 25px;}
+h2 {font-size: 2em; font-weight: bold; color: turquoise; padding-left: 25px;}
+
+#main_info,
+#out_temp {
+  float: left;
+}
+
+#figure {
+  position: relative;
+}
+
+#main_info {
+  width: 100%;
+  font-size: 1.5em
+}
+
+#out_temp {
+  width: 250px;
+  height: 250px;
+  margin-right: 20px;
+}
+
+.output {
+  float: left;
+}
+
+.output1 {
+  float: center;
+}
+
+/* @media (max-width: 480px) {
+  .navbar li {
+    padding: 10px;
+  } */
+
+  .post {
+    margin-right: 30px;
+    margin-left: 30px;
+  } 
