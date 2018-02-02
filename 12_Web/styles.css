@@ -3,6 +3,7 @@
 body {
   font-family: Georgia, 'Times New Roman', Times, serif;
   background-color: lightgray;
+
 }
 
 ul {
@@ -34,7 +35,8 @@ li a:hover:not(.active) {
 }
 
 #landing {color: white; font-size: 2em; font-weight: bold;}
-.pull_right {z-index: 2;}
+
+.dropdown-menu { overflow: visible;}
 
 .active {
   color: white;
@@ -97,6 +99,12 @@ h2 {font-size: 2em; font-weight: bold; color: turquoise; padding-left: 25px;}
 h3 {font-weight: bold; color: turquoise; padding-left: 25px;}
 p1 {padding-left: 25px;}
 
+.column {
+  flex: 50%;
+  padding: 0 4px;
+}
+
+
 .member {
   float: left;
 }
@@ -153,6 +161,14 @@ p1 {padding-left: 25px;}
     margin-left: 40px;
     height: 350px;
   }
+
+  .box3 {
+    overflow-wrap: inherit;
+    position: relative;
+    width: 100%;
+
+  }
+
   .post {
     margin-right: 40px;
     margin-left: 40px;

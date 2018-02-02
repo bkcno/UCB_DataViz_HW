@@ -13,14 +13,25 @@
 
 <body>
   <div class="container-fluid">
-    <ul>
-      <li id="landing"><a class="active" href="index.html"><span class="glyphicon glyphicon-home"></span>Lattitude</a></li>
-      <div class='pull-right'> 
-        <li><a href="plots.html">Plots</a></li>
+      <nav class="navbar">
+          <ul>
+            <li id="landing"><a class="active" href="index.html"><span class="glyphicon glyphicon-home"></span>Lattitude</a></li>
+            <div class='pull-right'> 
+              
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Plots<span class="glyphicon glyphicon-triangle-bottom"></span></a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="v_temp.html">Max Temperature</a>
+                    <a class="dropdown-item" href="v_humid.html">Humidity</a>
+                    <a class="dropdown-item" href="v_cloud.html">Cloudiness</a>
+                    <a class="dropdown-item" href="v_winds.html">Wind Speed</a>
+                  </div>
+              </li>
         <li><a href="comps.html">Comparison</a></li>
         <li><a href="data.html">Data</a></li>
       </div>       
     </ul>
+    </nav>
   </div>
 
   <div class="container">
@@ -7437,7 +7448,7 @@
                         </tr>
                         </tbody></table>
                       </div>
-    </div>                  
+    </div>                 
   </div>
 </body>
 </html>
