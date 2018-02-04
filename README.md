@@ -1,2 +1,2 @@
-# UCB_DataViz_Science
+# UCB_DataVizAnalytics
 Projects, homework, and what-nots. 
