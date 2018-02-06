@@ -9,6 +9,7 @@ from bs4 import BeautifulSoup as bs
 # !pip install -r requirements.txt
 import pandas as pd
 import requests
+import re
 from splinter import Browser
 
 
@@ -68,7 +69,7 @@ featured_image_url = 'https://www.jpl.nasa.gov/spaceimages/images/wallpaper/PIA2
 
 # ### Mars Weather
 
-# In[11]:
+# In[8]:
 
 browser = Browser('chrome', executable_path='chromedriver', headless=False)
 url = 'https://twitter.com/marswxreport?lang=en'
@@ -79,7 +80,7 @@ new_soup1 = soup1.find('p', class_='TweetTextSize TweetTextSize--normal js-tweet
 print(new_soup1.prettify())
 
 
-# In[12]:
+# In[9]:
 
 mars_weather = new_soup1.text
 print(mars_weather)
@@ -87,12 +88,12 @@ print(mars_weather)
 
 # ### Mars Facts
 
-# In[13]:
+# In[10]:
 
 import pandas as pd
 
 
-# In[14]:
+# In[ ]:
 
 url = 'https://space-facts.com/mars/'
 
@@ -100,25 +101,25 @@ tables = pd.read_html(url)
 tables
 
 
-# In[15]:
+# In[ ]:
 
 df_mar = tables[0]
 df_mar.columns = ['description','value']
 
 
-# In[16]:
+# In[ ]:
 
 df_mar.to_html('table.html', index=False)
 
 
-# In[17]:
+# In[ ]:
 
 get_ipython().system('open table.html')
 
 
 # ### Mars Hemisperes
 
-# In[92]:
+# In[ ]:
 
 browser = Browser('chrome', executable_path='chromedriver', headless=False)
 
@@ -140,28 +141,29 @@ for url in urls:
     titles.append(title_h2)
 
     soup_2 = soup.find('div', class_="downloads")
-    possible_links = soup_2.find_all('a')
+    possible_links = soup_2.find_all('a', href=lambda href: href and href.endswith("/full.jpg"))
     for link in possible_links:
         tif_link = link.attrs['href']
         img_urls.append(tif_link)
 
 
-# In[97]:
+# In[ ]:
 
 # viewing the lists:  
 print(titles)
 print(img_urls)
 
 
-# In[102]:
+# In[ ]:
 
-# for i, j in titles, img_urls:
-#     if "jpg" in j:
-#         dictionary = {"title": i, "img_url": j}
-#         print(dictionary)
+hemisphere_image_urls = [{'title': title, 'img_url': img_url} for title, img_url in zip(titles,img_urls)]
 
+
+# ### MongoDB and Flask App
 
 # In[ ]:
 
+import nbconvert
 
+get_ipython().system(' jupyter nbconvert --to script --template basic mission_to_mars.ipynb --output scrape_mars')
 
