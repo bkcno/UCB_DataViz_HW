@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ALIENS ARE REAL!</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.7.3/d3.min.js"></script>
+
+    <style>
+    img {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+
+    .form-control {
+    display: inline-block;
+    width: 250px;
+    margin-top: 50px;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="jumbotron text-center">
+          <h1>All Alien Sightings Gathered!</h1>
+        </div>
+        <img src="" alt="giphy">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.7.3/d3.min.js"></script>
+        <script type="text/javascript">
+          
+          var movie = "Forget Men In Black";
+          var queryURL = "http://api.giphy.com/v1/gifs/search?q=movies+" + movie + "&api_key=dc6zaTOxFJmzC&limit=10";
+      
+          d3.json(queryURL, function(error, response) {
+            if (error) return console.warn(error);
+            console.log("url", response);
+      
+            var url = response.data[0].images.fixed_height.url;
+            d3.select("img").attr("src", url);
+          })
+        </script>
+                
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group">
+              <input type="text" class="form-control" id="datetime" placeholder="search for ...">
+              <a id="search" class="btn btn-default">Search</a>
+            </div>
+          </div>
+        </div>
+          <nav aria-label="Page navigation">
+            <ul class="pagination pagination-sm">
+              <li>
+                <a href="#" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                </a>
+              </li>
+              <li><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li><a href="#">5</a></li>
+              <li>
+                <a href="#" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <div class="row">
+            <div class="col-md-12">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Date/time</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Country</th>
+                    <th>Shape</th>
+                    <th>Duration</th>
+                    <th>Comment</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+          
+    
+    </div>   
+    <script src="data.js" type="text/javascript"></script>
+    <script src="index.js" type="text/javascript"></script>
+
+</body>
+
+</html>
