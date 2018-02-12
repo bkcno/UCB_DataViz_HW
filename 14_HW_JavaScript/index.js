@@ -7,19 +7,21 @@ var $countryInput = document.querySelector("#country");
 var $shapeInput = document.querySelector("#shape");
 var $searchBtn = document.querySelector("#search");
 
-// Add an event listener to the $searchButton, call handleSearchButtonClick when clicked
-$searchBtn.addEventListener("click", handleSearchButtonClick);
-
 var filteredData = dataSet;
 
+var startingIndex = 0;
+var resultsPerPage = 100;
+
 function renderTable() {
+  var endingIndex = startingIndex + resultsPerPage;
+  var dataSubset = filteredData.slice(startingIndex, endingIndex);
   $tbody.innerHTML = "";
-  for (var i = 0; i < filteredData.length; i++) {
+  for (var i = 0; i < dataSubset.length; i++) {
    
-    var alien = filteredData[i];
+    var alien = dataSubset[i];
     var fields = Object.keys(alien);
     // Create a new row in the tbody, set the index to be i + startingIndex
-    var $row = $tbody.insertRow(i);
+    var $row = $tbody.insertRow(i + startingIndex);
     for (var j = 0; j < fields.length; j++) {
       
       var field = fields[j];
@@ -28,6 +30,9 @@ function renderTable() {
     }
   }
 }
+
+// Add an event listener to the $searchButton, call handleSearchButtonClick when clicked
+$searchBtn.addEventListener("click", handleSearchButtonClick);
 
 function handleSearchButtonClick() {
   // Format the user's search by removing leading and trailing whitespace, lowercase the string
