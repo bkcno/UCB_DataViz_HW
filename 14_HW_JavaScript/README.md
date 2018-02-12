@@ -1,7 +1,7 @@
 # 14 | Project - JavaScript and DOM Manipulation
 
 
-## Step 1: Automatic Table and Date Search>
+## Step 1: Automatic Table and Date Search
 
  * Create a HTML web page utilizing UFO dataset gathered, and populate a table to the web page. 
 
