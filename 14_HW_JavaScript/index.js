@@ -1,36 +1,56 @@
+// Get references to the tbody element and button for loading additional results
 var $tbody = document.querySelector("tbody");
-var $datetimeInput = document.querySelector("#datetime");
+var $dateInput = document.querySelector("#date");
+var $cityInput = document.querySelector("#city");
+var $stateInput = document.querySelector("#state");
+var $countryInput = document.querySelector("#country");
+var $shapeInput = document.querySelector("#shape");
 var $searchBtn = document.querySelector("#search");
-// Add an event listener to the searchButton, call handleSearchButtonClick when clicked
-// $searchBtn.addEventListener("click", handleSearchButtonClick);
+
+// Add an event listener to the $searchButton, call handleSearchButtonClick when clicked
+$searchBtn.addEventListener("click", handleSearchButtonClick);
 
 var filteredData = dataSet;
-console.log(filteredData.length)
+
 function renderTable() {
   $tbody.innerHTML = "";
   for (var i = 0; i < filteredData.length; i++) {
-    // Get get the current aliendata object and its fields
-    var aliendata = filteredData[i];
-    var fields = Object.keys(aliendata);
+   
+    var alien = filteredData[i];
+    var fields = Object.keys(alien);
     // Create a new row in the tbody, set the index to be i + startingIndex
     var $row = $tbody.insertRow(i);
     for (var j = 0; j < fields.length; j++) {
-      // For every field in the aliendata object, create a new cell at set its inner text to be the current value at the current aliendata's field
+      
       var field = fields[j];
       var $cell = $row.insertCell(j);
-      $cell.innerText = aliendata[field];
+      $cell.innerText = alien[field];
     }
   }
 }
+
 function handleSearchButtonClick() {
-  var filterDate = $datetimeInput.value;
-  // Set filteredData to an array of all aliendata whose "date/time" matches the filter
-  filteredData = dataSet.filter(function(aliendata) {
-    var aliendataDate = aliendata.datetime;
-    // If true, add the aliendata to the filteredData, otherwise don't add it to filteredData
-    return aliendataDate === filterDate;
+  // Format the user's search by removing leading and trailing whitespace, lowercase the string
+  var filterDate = $dateInput.value;
+  var filterCity = $cityInput.value.trim().toLowerCase();
+  var filterState = $stateInput.value.trim().toLowerCase();
+  var filterCountry = $countryInput.value.trim().toLowerCase();
+  var filterShape = $shapeInput.value.toLowerCase();
+
+  filteredData = dataSet.filter(function(alien) {
+    var alienDate = alien.datetime.substring(0, filterDate.length);
+    var alienCity = alien.city.substring(0, filterCity.length).toLowerCase();
+    var alienState = alien.state.substring(0, filterState.length).toLowerCase();
+    var alienCountry = alien.country.substring(0, filterCountry.length).toLowerCase();
+    var alienShape = alien.shape.substring(0, filterShape.length).toLowerCase();
+
+    if (alienDate === filterDate && alienState === filterState && alienCity === filterCity && alienCountry === filterCountry && alienShape === filterShape) {
+      return true;
+    }
+    return false;
   });
   renderTable();
 }
+
 // Render the table for the first time on page load
-renderTable();dataSet
+renderTable();

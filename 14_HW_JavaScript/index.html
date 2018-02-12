@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ALIENS ARE REAL!</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.7.3/d3.min.js"></script>
 
     <style>
@@ -25,16 +25,15 @@
 </head>
 <body>
     <div class="container">
-
-        <div class="jumbotron text-center">
-          <h1>All Alien Sightings Gathered!</h1>
-        </div>
+      <div class="jumbotron text-center">
+          <h1 style="color:seagreen;">All Alien Sightings Gathered!</h1>
+      </div>
         <img src="" alt="giphy">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.7.3/d3.min.js"></script>
         <script type="text/javascript">
           
-          var movie = "Forget Men In Black";
-          var queryURL = "http://api.giphy.com/v1/gifs/search?q=movies+" + movie + "&api_key=dc6zaTOxFJmzC&limit=10";
+          var movie = "Moon ET";
+          var queryURL = "http://api.giphy.com/v1/gifs/search?q=movies+" + movie + "&api_key=dc6zaTOxFJmzC";
       
           d3.json(queryURL, function(error, response) {
             if (error) return console.warn(error);
@@ -45,14 +44,19 @@
           })
         </script>
                 
-        <div class="row">
+        <div class="row">  
           <div class="col-md-4">
             <div class="form-group">
-              <input type="text" class="form-control" id="datetime" placeholder="search for ...">
+              <input type="text" class="form-control" id="date" placeholder="mm/dd/yyyy">
+              <input type="text" class="form-control" id="city" placeholder="City">
+              <input type="text" class="form-control" id="state" placeholder="State">
+              <input type="text" class="form-control" id="country" placeholder="Country">
+              <input type="text" class="form-control" id="shape" placeholder="Shape">
               <a id="search" class="btn btn-default">Search</a>
             </div>
           </div>
         </div>
+
           <nav aria-label="Page navigation">
             <ul class="pagination pagination-sm">
               <li>
