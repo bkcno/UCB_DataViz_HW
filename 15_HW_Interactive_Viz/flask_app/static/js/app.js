@@ -51,8 +51,8 @@ function buildPlot() {
           }
         }],
       title: '<b>Belly Button Washing Frequency</b> <br> Scrubs per week',
-      height: 600,
-      width: 600,
+      height: 400,
+      width: 400,
       xaxis: {zeroline:false, showticklabels:false,
                  showgrid: false, range: [-1, 1]},
       yaxis: {zeroline:false, showticklabels:false,

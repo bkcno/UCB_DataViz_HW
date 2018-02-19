@@ -9,35 +9,41 @@
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body>
-  <div class="container">
+  <div class="container fluid">
     <div class="jumbotron text-center">
       <h1 style="color: rgb(36, 128, 0)">Belly Button Biodiversity Dashboard</h1>
       <p>Explore the dataset with the interactive charts below!</p>
     </div>
     <div class="row">
+      <div class="container fluid">
       <div class="col-md-2">
         
         <div class="well">
           <p>SELECT Sample:</p>
           <select id="selDataset" onchange="optionChanged()">
-            <option selected="selected">Select..</option>
+            <option selected="selected">Select...</option>
           </select>
           <script src="{{ url_for('static', filename='js/index.js') }}"></script>  
         </div>
       </div>  
-        <div class="col-md-4" >
-          <div id="pie" style="height:50px;width:50px;padding:0"></div>
-          <script src="{{ url_for('static', filename='js/plot.js') }}"></script>
+        <div class="col-md-4">
+          <div id="pie" style="height:60px;width:60px;padding:0"></div>
+          <script src="{{ url_for('static', filename='js/plotpie.js') }}"></script>
         </div>   
-        <div class="col-md-4" style="position:relative">
-                <div id="meters" style="height:120px;width:100px"></div>
+        <div class="col-md-4" style="float:right">
+                <div id="meters" style="height:90px;width:72px"></div>
   
         </div> 
+      </div>  
     </div>   
-        <div id="bubble_plot"></div>        
-      
-  </div>
+    <br>
+  
+    <!-- <div class="col-md-12" style="margin-top:10px;position:relative">
+        <div id="bubbles"></div> 
+        <script src="{{ url_for('static', filename='js/plotbubble.js') }}"></script>     -->
 
+    </div>
+  </div>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <script src="{{ url_for('static', filename='js/app.js') }}"></script>
 </body>

@@ -18,6 +18,7 @@ function init() {
         type: "pie"
     }];
     var layout = {
+        title: '<b>OTU Compositions</b>',
         height: 500,
         width: 500
     };
