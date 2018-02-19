@@ -1,2 +1,4 @@
 # UCB_DataVizAnalytics
-Projects, homework, and what-nots. 
+
+### October 2017 Cohort
+Projects utilizing Python, APIs, SQL, Web Scraping, JavaScript, D3.
