@@ -10,7 +10,6 @@ function buildPlot() {
     var x = radius * Math.cos(radians);
     var y = radius * Math.sin(radians);
     
-    // Path: may have to change to create a better triangle
     var mainPath = 'M -.0 -0.025 L .0 0.025 L ',
          pathX = String(x),
          space = ' ',
@@ -20,7 +19,7 @@ function buildPlot() {
     
     var data = [{ type: 'scatter',
        x: [0], y:[0],
-        marker: {size: 24, color:'850000'},
+        marker: {size: 6, color:'850000'},
         showlegend: false,
         name: 'speed',
         text: level,
@@ -52,8 +51,8 @@ function buildPlot() {
           }
         }],
       title: '<b>Belly Button Washing Frequency</b> <br> Scrubs per week',
-      height: 1000,
-      width: 1000,
+      height: 600,
+      width: 600,
       xaxis: {zeroline:false, showticklabels:false,
                  showgrid: false, range: [-1, 1]},
       yaxis: {zeroline:false, showticklabels:false,
@@ -62,6 +61,7 @@ function buildPlot() {
     
     Plotly.newPlot('meters', data, layout);
 });
+
 }
 
 buildPlot();

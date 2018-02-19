@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <title>Belly Button Biodiversity</title>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body>
   <div class="container">
@@ -17,22 +18,26 @@
       <div class="col-md-2">
         
         <div class="well">
-        <p>SELECT Sample:</p>
-        <select id="selDataset" onchange="optionChanged(this.value)">
-          <option value="???">BB_940</option>
-        </select>
-      </div>
-          <div id="plot"></div>
-
+          <p>SELECT Sample:</p>
+          <select id="selDataset" onchange="optionChanged()">
+            <option selected="selected">Select..</option>
+          </select>
+          <script src="{{ url_for('static', filename='js/index.js') }}"></script>  
+        </div>
       </div>  
-        <div class="col-md-6" >
-            <div class="panel-heading">
-                <div id="meters" style="width: 120px; height: 100px;"><!-- Plotly chart will be drawn inside this DIV --></div>
-            </div>
+        <div class="col-md-4" >
+          <div id="pie" style="height:50px;width:50px;padding:0"></div>
+          <script src="{{ url_for('static', filename='js/plot.js') }}"></script>
+        </div>   
+        <div class="col-md-4" style="position:relative">
+                <div id="meters" style="height:120px;width:100px"></div>
+  
         </div> 
-      </div>         
+    </div>   
+        <div id="bubble_plot"></div>        
       
   </div>
+
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <script src="{{ url_for('static', filename='js/app.js') }}"></script>
 </body>
