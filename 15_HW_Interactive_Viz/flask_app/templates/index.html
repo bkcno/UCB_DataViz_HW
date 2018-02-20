@@ -16,7 +16,7 @@
     </div>
     <div class="row">
       <div class="container fluid">
-      <div class="col-md-2">
+      <div class="col-md-3">
         
         <div class="well">
           <p>SELECT Sample:</p>
@@ -25,6 +25,20 @@
           </select>
           <script src="{{ url_for('static', filename='js/index.js') }}"></script>  
         </div>
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Sample Metadata</h3>
+          </div>
+          <div class="panel-body">
+            AGE: 24<br>
+            BBTYPE: I<br>
+            ETHNICITY: Caucasian<br> 
+            GENDER: F<br>
+            LOCATION: Beaufort/NC<br>
+            SAMPLEID: 940
+          </div>
+        </div>
+
       </div>  
         <div class="col-md-4">
           <div id="pie" style="height:60px;width:60px;padding:0"></div>
