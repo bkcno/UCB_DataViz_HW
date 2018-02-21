@@ -19,8 +19,8 @@ function init() {
     }];
     var layout = {
         title: '<b>OTU Compositions</b>',
-        height: 500,
-        width: 500
+        height: 400,
+        width: 400
     };
     Plotly.plot("pie", data, layout);
 }
