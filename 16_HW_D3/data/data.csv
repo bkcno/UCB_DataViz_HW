@@ -1,0 +1,51 @@
+id,state,abbr,education,poverty,higheducation,healthcare
+1,Alabama,AL,16.1,19.3,6.8,13.9
+2,Alaska,AK,14.5,11.2,7,15
+3,Arizona,AZ,17,18.2,6.9,14.4
+4,Arkansas,AR,14.2,18.9,7.4,16.3
+5,California,CA,13,16.4,9.5,14.8
+6,Colorado,CO,12.7,12,11.2,12.8
+7,Connecticut,CT,11.8,10.8,14.1,8.7
+8,Delaware,DE,15.3,12.5,8.5,8.7
+10,Florida,FL,16.5,16.5,8.2,17.6
+11,Georgia,GA,16.9,18.3,8.2,20.9
+12,Hawaii,HI,8.5,11.4,7.5,8.1
+13,Idaho,ID,14.1,14.8,5.5,16.5
+14,Illinois,IL,12.8,14.4,12.9,11.9
+15,Indiana,IN,17,15.2,9,14.8
+16,Iowa,IA,10.7,12.2,9.8,7.7
+17,Kansas,KS,12.7,13.6,10.3,14.5
+18,Kentucky,KY,13.3,19.1,8.4,10
+19,Louisiana,LA,19.2,19.8,7.2,18.7
+20,Maine,ME,11.9,14.1,10.9,11
+21,Maryland,MD,12.2,10.1,12.7,9.2
+22,Massachusetts,MA,10.2,11.6,17.2,4.6
+23,Michigan,MI,13.1,16.2,9.7,10.3
+24,Minnesota,MN,12,11.5,12.8,7.3
+25,Mississippi,MS,17.9,21.5,5.7,18.8
+26,Missouri,MO,13.2,15.5,9.2,12.9
+27,Montana,MT,13.3,15.4,6.7,12.9
+28,Nebraska,NE,10.6,12.4,10.9,12.4
+29,Nevada,NV,18.2,15.2,5.4,17.1
+30,New Hampshire,NH,11.4,9.2,12,11.4
+31,New Jersey,NJ,12.1,11.1,14.4,12.5
+32,New Mexico,NM,18.3,21.3,5,15.4
+33,New York,NY,12.8,15.9,15.1,12.3
+34,North Carolina,NC,13.8,17.2,9.5,16.1
+35,North Dakota,ND,10.9,11.5,12.9,8.8
+36,Ohio,OH,13.7,15.8,9.5,10.2
+37,Oklahoma,OK,16.6,16.6,7.1,13.9
+38,Oregon,OR,13.6,16.6,7.6,11
+39,Pennsylvania,PA,12,13.6,12.1,10.1
+40,Rhode Island,RI,11.2,14.3,12.1,8
+41,South Carolina,SC,14.5,18,8.4,17.1
+42,South Dakota,SD,16,14.2,7.1,9.9
+43,Tennessee,TN,12.9,18.3,8.8,14.2
+44,Texas,TX,16.3,17.2,7.8,24.9
+45,Utah,UT,14.1,11.7,6.6,13.9
+46,Vermont,VT,8.6,12.2,12.7,6.7
+47,Virginia,VA,10.8,11.8,12.1,13.1
+48,Washington,WA,15.2,13.2,10.6,10.7
+49,West Virginia,WV,14.2,18.3,6.9,10.1
+50,Wisconsin,WI,11.1,13.2,10.5,8.5
+51,Wyoming,WY,12,11.2,6.6,15.1

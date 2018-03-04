@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>D3Times</title>
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/d3Style.css">
+	<!-- Latest compiled and minified CSS & JS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.7.3/d3.min.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+  	<script src="https://d3js.org/d3.v4.min.js"></script>
+
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-md-12 col-md-offset-0">
+				<h1>D3 Times. The Data Journalism.</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12  col-md-9 col-md-offset-0">
+				<div class="iframeContainer">
+					<iframe style="width:100%; height:700px;overflow:auto;" src="d3.html"></iframe>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12  col-md-9 col-md-offset-0">
+				<div class="article">
+					<div class="header">
+						<h2>The Numbers Behind Healthcare Coverage</h2>
+						<h3>Does Education Promote Health Awareness?</h3>
+						<p>It is almost self explanatory that employement status impacts healthcare coverage. However, after analyzing various datasets from both <a href="https://factfinder.census.gov/faces/nav/jsf/pages/searchresults.xhtml" target="_blank">American FactFinder</a> and 
+							<a href="https://chronicdata.cdc.gov/Behavioral-Risk-Factors/BRFSS-2014-Overall/5ra3-ixqq" target="_blank">Behavioral Risk Factor Surveillance System</a> comparing healthcare coverage, or lack thereof, against multiple variables, the results are not as simpl as it seems.
+							When examing the year 2014 data across all 50 states, we have found that being employed full-time has negative 40% correlation with not having health insurance coverage, that is, being a full-time employee predicts having healthcare coverage
+							with 40% accuracy. Poverty, on the other hand, has <b>55.66%</b> positive correlation with the absence of healthcare coverage. Interesting enough, the correlations between education levels and healthcare coverage are more significant than 
+							these two factors. For the group with education of college or higher, the correlation with lack of healthcare is negative <b>56.92%</b>, whereas, for group with less than high school graduate education, the correlation with lack of healthcare is at <b>68.95%</b>!
+							Hence, the finding here could enforce the argument that educational programs and policies are important public health instruments.
+						<br>	
+						<h3>The Road Ahead:</h3>
+						<p>Not surprisingl, there is a positive <b>68.26%</b> correlation between lower education and poverty. Understanding the socialeconomical dynamic in between helps the general public to be better informed. The failure to provide social safety net to the struggling 
+							or vulnerable population will be in the long run costly to the society as whole. </p>
+						</p>
+					  </div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="footer">
+		<p>D3Times (C) 2018. All Rights Reserved.</p>
+	</div>
+
+</body>
+</html>
