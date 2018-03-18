@@ -1,5 +1,5 @@
 // Store our API endpoint inside queryUrl 
-var queryUrl = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson";
+var queryUrl = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson";
 
 // Perform a GET request to the query URL
 d3.json(queryUrl, function(data) {
@@ -10,57 +10,12 @@ d3.json(queryUrl, function(data) {
 
 function createFeatures(earthquakeData) {
 
-    // Define a function we want to run once for each feature in the features array
-    // Give each feature a popup describing the place and time of the earthquake
-    function markerSize(magnitude) {
-        return magnitude * 1000;
-    }
+    // function markerSize(magnitude) {
+    //     return magnitude * 100;
 
-    // var cities = [
-    // ];
-    
-    // // Create a three-color scale
-    // var populationMin = d3.min(cities, function(city){
-    //     return city.population;
+    // var earthquakes = L.geoJSON(earthquakeData, {
+    //     onEachFeature: handleFeature
     // });
-    // var populationMax = d3.max(cities, function(city){
-    //     return city.population;
-    // });
-    // var populationMean = d3.mean(cities, function(city){
-    //     return city.population;
-    // });
-    // var getColors3 = d3.scaleLinear()
-    //     .domain([
-    //         populationMin, populationMean, populationMax
-    //     ])
-    //     .range([
-    //         'steelblue', 'limegreen', 'tomato'
-    //     ]);
-    
-    // // Loop through the cities array and create one marker for each city object
-    // for (var i = 0; i < cities.length; i++) {
-    //     L.circle(cities[i].location, {
-    //         fillOpacity: 0.75,
-    //         fillColor: getColors2(cities[i].population),
-    //         color: "none",
-    //         weight: 3,
-    //         className: "city",
-    //         // Setting our circle's radius equal to the output of our markerSize function
-    //         // This will make our marker's size proportionate to its population
-    //         radius: markerSize(cities[i].population)
-    //     }).bindPopup("<h1>" + cities[i].name + "</h1> <hr> <h3>Population: " + cities[i].population + "</h3>").addTo(myMap);
-    // }
-
-    function handleFeature(features, layer) {
-        layer.bindPopup("<h3>" + features.properties.place +
-      "</h3><hr><p>" + new Date(features.properties.time) + "</p>");
-    }
-
-    // Create a GeoJSON layer containing the features array on the earthquakeData object
-    // Run the handleFeature function once for each piece of data in the array
-    var earthquakes = L.geoJSON(earthquakeData, {
-        onEachFeature: handleFeature
-    });
     // Create a layer with all earthquake data
     var earthquakes = L.geoJSON(earthquakeData);
 
