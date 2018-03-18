@@ -11,14 +11,18 @@ d3.json(queryUrl, function(data) {
 function createFeatures(earthquakeData) {
 
     function markerSize(magnitude) {
-        return magnitude * 5;
+        return magnitude * 4;
     };
     
-    var getColors2 = d3.scaleLinear()
-    .domain(d3.extent(earthquakeData, function(feature){
-        return feature.properties.mag;
-    }))
-    .range(['yellow', 'red']);
+    // var getColors2 = d3.scaleLinear()
+    // .domain(d3.extent(earthquakeData, function(feature){
+    //     return feature.properties.mag;
+    // }))
+    // .range(['green', 'red']);
+
+    var getColors = d3.scaleLinear()
+    .domain(d3.ticks(0, 7, 6))
+    .range(["green","lightyellow","yellow","orange","darkorange","red"]);
 
     // Create a layer with all earthquake data
     var earthquakes = L.geoJSON(earthquakeData, {
@@ -26,7 +30,7 @@ function createFeatures(earthquakeData) {
         pointToLayer: function(feature, latlng) {
             return new L.CircleMarker(latlng, {radius: markerSize(feature.properties.mag), 
                                                fillOpacity: 0.75, 
-                                               color: getColors2(feature.properties.mag)});
+                                               color: getColors(feature.properties.mag)});
         },
         
         onEachFeature: function (feature, layer) {
@@ -69,7 +73,7 @@ function createMap(earthquakes) {
     // Create our map, giving it the streetmap and earthquakes layers to display on load
     var myMap = L.map("map_one", {
         center: [38.80, -116.42],
-        zoom: 4,
+        zoom: 3,
         layers: [lightmap, earthquakes]
     });
 

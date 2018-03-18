@@ -5,3 +5,11 @@ body,
   padding: 0;
   margin: 0;
 }
+
+h1 {
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+}
