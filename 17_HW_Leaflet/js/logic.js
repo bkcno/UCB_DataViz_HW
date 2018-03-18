@@ -1,5 +1,5 @@
 // Store our API endpoint inside queryUrl 
-var queryUrl = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson";
+var queryUrl = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson";
 
 // Perform a GET request to the query URL
 d3.json(queryUrl, function(data) {
@@ -10,18 +10,34 @@ d3.json(queryUrl, function(data) {
 
 function createFeatures(earthquakeData) {
 
-    // function markerSize(magnitude) {
-    //     return magnitude * 100;
+    function markerSize(magnitude) {
+        return magnitude * 5;
+    };
+    
+    var getColors2 = d3.scaleLinear()
+    .domain(d3.extent(earthquakeData, function(feature){
+        return feature.properties.mag;
+    }))
+    .range(['yellow', 'red']);
 
-    // var earthquakes = L.geoJSON(earthquakeData, {
-    //     onEachFeature: handleFeature
-    // });
     // Create a layer with all earthquake data
-    var earthquakes = L.geoJSON(earthquakeData);
+    var earthquakes = L.geoJSON(earthquakeData, {
+
+        pointToLayer: function(feature, latlng) {
+            return new L.CircleMarker(latlng, {radius: markerSize(feature.properties.mag), 
+                                               fillOpacity: 0.75, 
+                                               color: getColors2(feature.properties.mag)});
+        },
+        
+        onEachFeature: function (feature, layer) {
+            layer.bindPopup("<h3>" + feature.properties.place +
+             "</h3><hr><h2> Magnitude: " + feature.properties.mag + "</h2>");
+        }
+    })
 
     // Sending our earthquakes layer to the createMap function
     createMap(earthquakes);
-}
+};
 
 function createMap(earthquakes) {
 
