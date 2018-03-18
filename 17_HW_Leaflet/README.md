@@ -1,5 +1,5 @@
 ## Visualizing Data with Leaflet
-!(/EarthquakeMap.png)
+
 ### Basic Visualization
 The first task is to visualize an earthquake data set. The USGS provides earthquake data in a number of different formats, updated every 5 minutes. Visit the USGS GeoJSON Feed page and pick a data set to visualize. When click on a data set, for example 'All Earthquakes from the Past 7 Days', there will be a JSON representation of that data. Utilizing the URL of this JSON to pull in the data for the visualization. Create a map using Leaflet that plots all of the earthquakes from the data set based on their longitude and latitude.
 
