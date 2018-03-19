@@ -9,9 +9,11 @@ d3.json(queryUrl, function(data) {
     createFeatures(data.features);
 });
 
-d3.json(lineUrl, function(linedata) {
-    console.log(linedata);
+d3.json(lineUrl, function(lineData) {
+    console.log(lineData['features']);
+    var platesLayer = L.geoJSON(lineData.features);
 });
+    
 
 function createFeatures(earthquakeData) {
 
@@ -49,6 +51,7 @@ function createFeatures(earthquakeData) {
     // Sending our earthquakes layer to the createMap function
     createMap(earthquakes);
 };
+    
 
 function createMap(earthquakes) {
 
