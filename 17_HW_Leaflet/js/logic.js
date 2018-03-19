@@ -118,3 +118,7 @@ function createMap(earthquakes) {
         legend.addTo(myMap);
     
 }
+
+// function createMaps(platesLayer) {
+//         platesLayer.addTo(myMap);
+// }
