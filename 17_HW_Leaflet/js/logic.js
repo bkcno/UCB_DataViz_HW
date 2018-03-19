@@ -1,11 +1,16 @@
 // Store our API endpoint inside queryUrl 
 var queryUrl = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson";
+var lineUrl = "tectonicplates/PB2002_boundaries.json";
 
 // Perform a GET request to the query URL
 d3.json(queryUrl, function(data) {
     // Once we get a response, send the data.features object to the createFeatures function
     console.log(data['features']);
     createFeatures(data.features);
+});
+
+d3.json(lineUrl, function(linedata) {
+    console.log(linedata);
 });
 
 function createFeatures(earthquakeData) {
@@ -29,8 +34,10 @@ function createFeatures(earthquakeData) {
 
         pointToLayer: function(feature, latlng) {
             return new L.CircleMarker(latlng, {radius: markerSize(feature.properties.mag), 
-                                               fillOpacity: 0.75, 
-                                               color: getColors(feature.properties.mag)});
+                                               fillOpacity: 0.9, 
+                                               color: 'black',
+                                               weight: 1,
+                                               fillColor: getColors(feature.properties.mag)});
         },
         
         onEachFeature: function (feature, layer) {
@@ -72,16 +79,39 @@ function createMap(earthquakes) {
 
     // Create our map, giving it the streetmap and earthquakes layers to display on load
     var myMap = L.map("map_one", {
-        center: [38.80, -116.42],
-        zoom: 3,
+        center: [33.45, -112.08],
+        zoom: 4,
         layers: [lightmap, earthquakes]
     });
 
     // Create a layer control
     // Pass in our baseMaps and overlayMaps
     // Add the layer control to the map
+    
     L.control
         .layers(baseMaps, overlayMaps, {
             collapsed: false
         }).addTo(myMap);
+    
+    // Create legend
+    var legend = L.control({position: 'bottomright'});
+
+    legend.onAdd = function (map) {
+
+        // Creates a div with class="info legend"
+        var div = L.DomUtil.create('div', 'info legend');
+
+        // Sets the html code inside the div
+        div.innerHTML = '<span style="color:green;">0 - 1</span><br/>';
+        div.innerHTML += '<span style="color:yellow;">1 - 2</span><br/>';
+        div.innerHTML += '<span style="color:orange;">2 - 3 </span><br/>';
+        div.innerHTML += '<span style="color:darkorange;">3 - 4</span><br/>';
+        div.innerHTML += '<span style="color:red;">4 + </span><br/>';
+
+        return div;
+        };
+
+        // Add legend to myMap
+        legend.addTo(myMap);
+    
 }

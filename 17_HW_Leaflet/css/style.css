@@ -1,5 +1,6 @@
 html,
 body,
+head,
 #map_one {
   height: 100%;
   padding: 0;
@@ -12,4 +13,16 @@ h1 {
 
 h3 {
   text-align: center;
+}
+
+.legend {
+  padding: 10px;
+  font-family: Sanchez, serif;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 18px;
+  color: #555;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
