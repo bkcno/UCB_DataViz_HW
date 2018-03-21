@@ -6,16 +6,16 @@ var lineUrl = "tectonicplates/PB2002_boundaries.json";
 d3.json(queryUrl, function(data) {
     // Once we get a response, send the data.features object to the createFeatures function
     console.log(data['features']);
-    createFeatures(data.features);
-});
+    var earthquakeData = data.features;
 
-d3.json(lineUrl, function(lineData) {
-    console.log(lineData['features']);
-    var platesLayer = L.geoJSON(lineData.features);
-});
+    d3.json(lineUrl, function(lineData) {
+        console.log(lineData['features']);
+        var faultlineData = lineData.features;
+        createFeatures(earthquakeData, faultlineData);
+})});
     
 
-function createFeatures(earthquakeData) {
+function createFeatures(earthquakeData, faultlineData) {
 
     function markerSize(magnitude) {
         return magnitude * 4;
@@ -46,14 +46,20 @@ function createFeatures(earthquakeData) {
             layer.bindPopup("<h3>" + feature.properties.place +
              "</h3><hr><h2> Magnitude: " + feature.properties.mag + "</h2>");
         }
-    })
+    });
 
+    var faultlines = L.geoJSON(faultlineData, {
+        onEachFeature: function (feature, layer) {
+            L.polyline(feature.geometry.coordinates)
+        }
+    });
+    
     // Sending our earthquakes layer to the createMap function
-    createMap(earthquakes);
+    createMap(earthquakes, faultlines);
 };
     
 
-function createMap(earthquakes) {
+function createMap(earthquakes, faultlines) {
 
     // Define streetmap and lightmap layers
     var streetmap = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/outdoors-v10/tiles/256/{z}/{x}/{y}?" +
@@ -77,6 +83,7 @@ function createMap(earthquakes) {
 
     // Create overlay object to hold our overlay layer
     var overlayMaps = {
+        "Fault Lines": faultlines,
         Earthquakes: earthquakes
     };
 
