@@ -72,6 +72,20 @@ d3.csv("data/data.csv", function(err, stateData) {
         .style("opacity", 0.8)
         .on("mouseover", toolTip.show)
         .on("mouseout", toolTip.hide);
+
+    chart.selectAll("text")
+        .data(stateData)
+        .enter()
+        .append("text")
+        .attr("class", "stateAbbr")
+        .text(function(data) { return data.abbr })
+        .attr("x", function(data, index) {
+            return xLinearScale(data.education);
+        })
+        .attr("y", function(data, index) {
+            return yLinearScale(data.healthcare);
+        });
+        
      
     chart.append("g")
         .attr("transform", `translate(0, ${height})`)
@@ -164,4 +178,4 @@ d3.csv("data/data.csv", function(err, stateData) {
 });
 
 // resizing for mobile phone users
-// d3.select(window).on('resize', [name of your function])
+// d3.select(window).on('resize', [name of function])

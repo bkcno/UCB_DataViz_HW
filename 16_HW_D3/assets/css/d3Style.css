@@ -13,6 +13,16 @@
     border: 0;
     border-radius: 10px;
   }
+
+  .stateAbbr {
+    text-anchor: middle;
+    font-size: 10px;
+    font-weight: bold;
+    font-family: sans-serif;
+    fill: gold;
+    vertical-align: middle;
+ }
+
   .axisText {
     font-family: sans-serif;
     font-weight: bold;

@@ -94,6 +94,7 @@ function createMap(earthquakes, faultlines) {
         layers: [lightmap, earthquakes]
     });
 
+
     // Create a layer control
     // Pass in our baseMaps and overlayMaps
     // Add the layer control to the map
@@ -124,8 +125,13 @@ function createMap(earthquakes, faultlines) {
         // Add legend to myMap
         legend.addTo(myMap);
     
-}
+};
 
-// function createMaps(platesLayer) {
-//         platesLayer.addTo(myMap);
-// }
+    var maps = [streetmap, satellitemap];
+    layerGroup = L.layerGroup(maps);
+    var sliderControl = L.control.sliderControl({
+        layer: layerGroup,
+        follow: true
+});
+    myMap.addControl(sliderControl);
+    sliderControl.startSlider();
