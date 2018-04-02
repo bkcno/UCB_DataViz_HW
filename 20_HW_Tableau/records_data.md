@@ -230,15 +230,3 @@ print("CHECKPOINT: The total ridership (by total annual members) has grown since
 
     CHECKPOINT: The total ridership (by total annual members) has grown since the launch in 2013 to 2016 by: 1099.96%
 
-
-### Hours and Stations:
-
-
-```python
-
-```
-
-
-```python
-
-```
