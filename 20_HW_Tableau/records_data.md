@@ -601,8 +601,8 @@
 
 
 
-    Result: The Most Used Bikes Are:
-    ____________________________________
+    Result: The Most Used Bikes and Most Likely Due for Inspection:
+    ______________________________________________________________
 
 <div>
 <table border="1" class="dataframe">
@@ -678,3 +678,10 @@
   </tbody>
 </table>
 </div>
+
+
+### Ridership by Gender:
+
+    Result: The Percentage of Female Riders vs. Male Riders is: 22.32% vs. 77.68%
+
+    Result: The increase from 2015 to 2018 for femal riders is: 448.22% vs. 284.83%, for male riders in the same period.
