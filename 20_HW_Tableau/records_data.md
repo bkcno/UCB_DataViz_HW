@@ -1,18 +1,18 @@
 
 ### Trips Recorded:
 
-    CHECKPOINT: The total trips have been recorded since the inception of data in 2013 for NYC: 54,828,832
+    Result: The total trips have been recorded since the inception of data in 2013 for NYC: 54,828,832
 
 
 ### Rideship Change:
 
-    CHECKPOINT: The total ridership (by total annual members) has grown since the launch in 2013 to 2016 by: 1099.96%
+    Result: The total ridership (by total annual members) has grown since the launch in 2013 to 2016 by: 1099.96%
 
 
 
 ### Most and Least Utilized Stations, Starting and Ending:
 
-    CHECKPOINT: The Top 10 Popular Starting Stations Are:
+    Result: The Top 10 Popular Starting Stations Are:
     _____________________________________________________
 
 <div>
@@ -159,7 +159,7 @@
 
 
 
-    CHECKPOINT: The Top 10 Popular Ending Stations Are:
+    Result: The Top 10 Popular Ending Stations Are:
     ___________________________________________________
 
 <div>
@@ -306,7 +306,7 @@
 
 
 
-    CHECKPOINT: The Bottom 10 Starting Stations Are:
+    Result: The Bottom 10 Starting Stations Are:
     ________________________________________________
 
 <div>
@@ -453,7 +453,7 @@
 
 
 
-    CHECKPOINT: The Bottom 10 Ending Stations Are:
+    Result: The Bottom 10 Ending Stations Are:
     ______________________________________________
 
 <div>
@@ -601,7 +601,7 @@
 
 
 
-    CHECKPOINT: The Most Used Bikes Are:
+    Result: The Most Used Bikes Are:
     ____________________________________
 
 <div>
