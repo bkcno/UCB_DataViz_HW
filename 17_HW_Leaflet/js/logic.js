@@ -43,8 +43,9 @@ function createFeatures(earthquakeData, faultlineData) {
         },
         
         onEachFeature: function (feature, layer) {
-            layer.bindPopup("<h3>" + feature.properties.place +
-             "</h3><hr><h2> Magnitude: " + feature.properties.mag + "</h2>");
+            layer.bindPopup("<h3>" + feature.properties.place + 
+             "</h3><hr><h2> Magnitude: " + feature.properties.mag + "</h2>" +
+             "<br>" + Date(feature.properties.time));
         }
     });
 
@@ -58,21 +59,21 @@ function createFeatures(earthquakeData, faultlineData) {
     createMap(earthquakes, faultlines);
 };
     
-
+ 
 function createMap(earthquakes, faultlines) {
 
     // Define streetmap and lightmap layers
     var streetmap = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/outdoors-v10/tiles/256/{z}/{x}/{y}?" +
-    "access_token=pk.eyJ1Ijoia2pnMzEwIiwiYSI6ImNpdGRjbWhxdjAwNG0yb3A5b21jOXluZTUifQ." +
-    "T6YbdDixkOBWH_k9GbS8JQ");
+    "access_token=pk.eyJ1IjoiYmtjbm8iLCJhIjoiY2pkd2dvYjdzMXM2cDJ2dDNpNWFsaDlqZCJ9." +
+    "EGtSQaBvLIqSuIhqq9AszA");
 
     var lightmap = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/light-v9/tiles/256/{z}/{x}/{y}?" +
-    "access_token=pk.eyJ1Ijoia2pnMzEwIiwiYSI6ImNpdGRjbWhxdjAwNG0yb3A5b21jOXluZTUifQ." +
-    "T6YbdDixkOBWH_k9GbS8JQ");
+    "access_token=pk.eyJ1IjoiYmtjbm8iLCJhIjoiY2pkd2dvYjdzMXM2cDJ2dDNpNWFsaDlqZCJ9." +
+    "EGtSQaBvLIqSuIhqq9AszA");
 
     var satellitemap = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/satellite-v9/tiles/256/{z}/{x}/{y}?" +
-    "access_token=pk.eyJ1Ijoia2pnMzEwIiwiYSI6ImNpdGRjbWhxdjAwNG0yb3A5b21jOXluZTUifQ." +
-    "T6YbdDixkOBWH_k9GbS8JQ");
+    "access_token=pk.eyJ1IjoiYmtjbm8iLCJhIjoiY2pkd2dvYjdzMXM2cDJ2dDNpNWFsaDlqZCJ9." +
+    "EGtSQaBvLIqSuIhqq9AszA");
     
     // Define a baseMaps object to hold our base layers
     var baseMaps = {
@@ -89,9 +90,9 @@ function createMap(earthquakes, faultlines) {
 
     // Create our map, giving it the streetmap and earthquakes layers to display on load
     var myMap = L.map("map_one", {
-        center: [33.45, -112.08],
-        zoom: 4,
-        layers: [lightmap, earthquakes]
+        center: [35.09, -37.10],
+        zoom: 3,
+        layers: [lightmap, earthquakes, faultlines]
     });
 
 
@@ -113,7 +114,8 @@ function createMap(earthquakes, faultlines) {
         var div = L.DomUtil.create('div', 'info legend');
 
         // Sets the html code inside the div
-        div.innerHTML = '<span style="color:green;">0 - 1</span><br/>';
+        div.innerHTML = '<span style="color:black;">MAGNITUDE</span><br/>';
+        div.innerHTML += '<span style="color:green;">0 - 1</span><br/>';
         div.innerHTML += '<span style="color:yellow;">1 - 2</span><br/>';
         div.innerHTML += '<span style="color:orange;">2 - 3 </span><br/>';
         div.innerHTML += '<span style="color:darkorange;">3 - 4</span><br/>';
@@ -127,11 +129,11 @@ function createMap(earthquakes, faultlines) {
     
 };
 
-    var maps = [streetmap, satellitemap];
-    layerGroup = L.layerGroup(maps);
-    var sliderControl = L.control.sliderControl({
-        layer: layerGroup,
-        follow: true
-});
-    myMap.addControl(sliderControl);
-    sliderControl.startSlider();
+//     var maps = [streetmap, satellitemap];
+//     layerGroup = L.layerGroup(maps);
+//     var sliderControl = L.control.sliderControl({
+//         layer: layerGroup,
+//         follow: true
+// });
+//     myMap.addControl(sliderControl);
+//     sliderControl.startSlider();

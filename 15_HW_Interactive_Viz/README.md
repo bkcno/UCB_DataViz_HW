@@ -11,3 +11,6 @@ Use Flask to design an API for the belly button dataset and to serve the HTML an
 
 ### Step 2 - Plotly.js
 Use Plotly.js to build interactive charts for the dashboard.
+
+### Deploy to Heroku
+https://secure-savannah-65031.herokuapp.com/

@@ -36,7 +36,9 @@ li a:hover:not(.active) {
 
 #landing {color: white; font-size: 2em; font-weight: bold;}
 
-.dropdown-menu { overflow: visible;}
+.dropdown-menu { overflow: visible;
+   z-index: 999; 
+}
 
 .active {
   color: white;
